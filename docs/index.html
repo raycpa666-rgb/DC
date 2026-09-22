@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debt Payoff Planner</title>
+<meta name="description" content="A simple spreadsheet that shows exactly when you'll be debt-free and how much interest an extra payment saves. Works in Excel, Google Sheets and Numbers.">
+<style>
+:root{--bg:#f7f8fb;--card:#fff;--ink:#16202c;--muted:#5b6776;--accent:#1f6feb;--accent-ink:#fff;--line:#e3e8ef;--good:#1a7f37}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;--card:#161b22;--ink:#e6edf3;--muted:#9aa6b2;--accent:#4c8df6;--line:#2a313c;--good:#3fb950}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header{padding:64px 0 40px;text-align:center}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.15;margin:0 0 16px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:19px;max-width:620px;margin:0 auto 28px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:14px 28px;border-radius:10px;font-size:18px}
+.btn:hover{filter:brightness(1.08)}
+.fine{color:var(--muted);font-size:14px;margin-top:10px}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-variant-numeric:tabular-nums}
+th,td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+tr:last-child td{border-bottom:0}
+.save{color:var(--good);font-weight:700}
+.scroll{overflow-x:auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+footer{padding:40px 0 60px;text-align:center;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>See the exact month you'll be debt-free</h1>
+  <p class="sub">A plain spreadsheet for your budget, your debts and your savings goals. Enter your numbers once and it shows how many months and how many dollars an extra payment saves you.</p>
+  <a class="btn buy" href="#">Get the planner for $9</a>
+  <p class="fine">Instant download · Works in Excel, Google Sheets &amp; Apple Numbers · No subscription</p>
+</header>
+
+<section>
+  <h2>An example: one credit card</h2>
+  <div class="scroll">
+  <table>
+    <tr><th>$4,200 at 22.99% APR</th><th>Months to pay off</th><th>Total interest</th></tr>
+    <tr><td>Minimum only ($120/mo)</td><td>59</td><td>$2,821</td></tr>
+    <tr><td>Add $100/mo ($220/mo)</td><td>24</td><td>$1,078</td></tr>
+    <tr><td><strong>You save</strong></td><td class="save">35 months</td><td class="save">$1,743</td></tr>
+  </table>
+  </div>
+  <p class="fine">These numbers come straight from the planner's example row.</p>
+</section>
+
+<section>
+  <h2>What's inside</h2>
+  <div class="grid">
+    <div class="card"><h3>Monthly budget</h3><p>Planned vs. actual for 20 categories, overspending shown in red, plus your left-over cash and savings rate.</p></div>
+    <div class="card"><h3>Debt payoff calculator</h3><p>Up to 10 debts. Shows months and interest with and without an extra payment, and tells you when a payment is too low to ever clear the balance.</p></div>
+    <div class="card"><h3>Savings goals</h3><p>Set a target and a monthly amount. You get progress bars and an estimated finish date.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Questions</h2>
+  <details><summary>Do I need Excel?</summary><p>No. It opens in Excel, Google Sheets (File → Import) and Apple Numbers.</p></details>
+  <details><summary>Is my data uploaded anywhere?</summary><p>No. It's a file on your own computer or in your own Google Drive.</p></details>
+  <details><summary>What if it's not for me?</summary><p>Email within 30 days and you get a full refund. No questions asked.</p></details>
+  <details><summary>Is this financial advice?</summary><p>No. It's a calculator that does the math so you can make your own decisions.</p></details>
+</section>
+
+<section style="text-align:center">
+  <a class="btn buy" href="#">Get the planner for $9</a>
+</section>
+
+<footer>© <span id="y"></span> Debt Payoff Planner</footer>
+</div>
+<script>
+// Paste your Gumroad / Lemon Squeezy / Stripe Payment Link here:
+const BUY_URL = "https://YOUR-STORE.gumroad.com/l/debt-planner";
+document.querySelectorAll(".buy").forEach(a => a.href = BUY_URL);
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
