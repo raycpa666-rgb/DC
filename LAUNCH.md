@@ -7,7 +7,7 @@ You need to do the steps that involve your identity or money: sign up, get paid,
    Alternatives: Lemon Squeezy, Payhip, or Etsy (its "digital download" listings get search traffic from buyers).
 2. New product → Digital product → upload `product/Budget-and-Debt-Payoff-Planner.xlsx`.
 3. Price: **$9**. Copy the description from `docs/index.html`.
-4. Cover image: take a screenshot of the Debt Payoff tab with the example data.
+4. Cover image: `marketing/images/gumroad-cover-1280x720.png`. All listing and post text is in `marketing/COPY.md`.
 5. Turn on "Allow customers to pay what they want" with a $9 minimum. Some people will pay more.
 
 ## 2. Publish the sales page (10 min)

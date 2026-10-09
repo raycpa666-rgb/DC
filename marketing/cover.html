@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#f4f6fa;color:#16202c;width:var(--w);height:var(--h);overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:6%}
+.tag{display:inline-block;background:#1f3a5f;color:#fff;font-weight:700;border-radius:999px;padding:.4em 1em;font-size:calc(var(--s)*0.9);margin-bottom:.8em;align-self:flex-start}
+h1{font-size:calc(var(--s)*2.6);line-height:1.08;letter-spacing:-.02em;margin-bottom:.4em}
+p.sub{font-size:calc(var(--s)*1.05);color:#5b6776;margin-bottom:1.2em}
+table{border-collapse:collapse;background:#fff;border:2px solid #dfe5ee;border-radius:14px;overflow:hidden;font-size:var(--s);font-variant-numeric:tabular-nums;width:100%}
+th{background:#1f3a5f;color:#fff;padding:.6em .8em;text-align:right;font-weight:600}
+td{padding:.6em .8em;text-align:right;border-top:1px solid #e3e8ef}
+th:first-child,td:first-child{text-align:left}
+td.in{background:#fff7d6;color:#0000ff}
+.save td{font-weight:800;color:#1a7f37;background:#eaf6ec}
+.foot{margin-top:1em;font-size:calc(var(--s)*.85);color:#5b6776}
+.price{float:right;font-weight:800;color:#1f3a5f}
+</style></head><body>
+<span class="tag">Excel · Google Sheets · Numbers</span>
+<h1 id="h">See the exact month you'll be debt&#8209;free</h1>
+<p class="sub">Budget + debt payoff calculator + savings goals in one spreadsheet.</p>
+<table>
+<tr><th>$4,200 card at 22.99%</th><th>Payment</th><th>Months</th><th>Interest</th></tr>
+<tr><td>Minimum only</td><td class="in">$120</td><td>59</td><td>$2,821</td></tr>
+<tr><td>Add $100/month</td><td class="in">$220</td><td>24</td><td>$1,078</td></tr>
+<tr class="save"><td>You save</td><td></td><td>35 mo</td><td>$1,743</td></tr>
+</table>
+<p class="foot">Instant download · No subscription <span class="price">$9</span></p>
+<script>
+const q=new URLSearchParams(location.search);
+const w=+q.get("w")||1280,h=+q.get("h")||720;
+document.documentElement.style.setProperty("--w",w+"px");
+document.documentElement.style.setProperty("--h",h+"px");
+document.documentElement.style.setProperty("--s",(h>w ? w/32 : Math.min(w,h*1.4)/42)+"px");
+if(q.get("t"))document.getElementById("h").textContent=q.get("t");
+</script>
+</body></html>
